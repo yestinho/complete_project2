@@ -1,0 +1,319 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include layouts/header.ejs %>
+<br>
+<br>	
+<section id ="home">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+               <ol class="carousel-indicators">
+                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+               </ol>
+               <div class="carousel-inner">
+                 <div class="carousel-item active">
+                   <img class="d-block w-100" src="sl-1.png" alt="First slide">
+                   
+                   <div class="carousel-caption d-none d-md-block">
+                      <h1>Explore the new language.</h1><br>
+                      <btn class="btn btn-lg btn-danger">KNOW MORE</btn>
+                   </div>
+                 </div>
+                 <div class="carousel-item">
+                   <img class="d-block w-100" src="sl-2.png" alt="Second slide">
+                   <div class="carousel-caption d-none d-md-block">
+                      <h1>Creative. Innovative.Intuitive.</h1><br>
+                      <btn class="btn btn-lg btn-danger">KNOW MORE</btn>
+                   </div>
+                 </div>
+                 <div class="carousel-item">
+                   <img class="d-block w-100" src="sl-3.png" alt="Third slide">
+                   <div class="carousel-caption d-none d-md-block">
+                      <h1>A new experience.</h1><br>
+                      <btn class="btn btn-lg btn-danger">KNOW MORE</btn>
+                   </div>
+                 </div>
+               </div>
+               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                 <span class="sr-only">Previous</span>
+               </a>
+               <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                 <span class="sr-only">Next</span>
+               </a>
+             </div>
+                </section>
+                <br>
+               <section id= "registration">
+                  <div class="container-fluid">
+                       <div class="section-header">
+                         <h2>Rigisteration form</h2>
+                         <div class="orange-line m-auto"></div>
+                        
+                       </div>
+                       
+                       <div class="row">
+
+                       <div class="col-3 offset-1"> 
+                          <div class="card">
+                              <img class="card-img-top img-fluid"  src="index1.jpg" height="300px"  alt="">
+                              <div class="card-body">
+                                  <p> Rgister now up comming courses </p>
+                              </div>
+                            </div>
+
+                       </div>
+                         <div class="col-7">
+                            <% if (messages.error) { %>
+                              <p style="color:red"><%- messages.error %></p>
+                            <% } %>
+                <form action="/add" method="post"  name="form1">
+	
+                  <div class="form-group">
+                   <input type="text" name="name" id="name" value="<%= name %>" class="form-control" placeholder="Full Name"/>
+                      </div>
+
+
+                      <div class="form-group">
+                          <select name="course" value="<%= course %>" class="form-control " id ="select">
+                            <option value=" web design">
+                              web design 
+                            </option>
+                            <option value="mobile app">
+                              mobile app
+                            </option>
+                            <option value="CCNA">
+                            CCNA 
+                            </option>
+                            <option value="It Basic">
+                              IT Basic
+                            </option>
+                            
+                          </select>
+                        </div>
+                
+                     
+                
+                     <div class="form-group">
+                      <input type="text" name="email" value="<%= email %>" class="form-control" placeholder="Email" />
+                     </div>
+                    
+
+                  
+                    
+                     <div class="form-group">
+                      <input type="submit" name="Submit" value="Add"  class="btn btn-lg btn-success"/>
+                    </div>
+                  </div>
+                 
+                  </div>
+                  </div>
+
+                
+                    
+                </form>
+              </section>
+              <section id="courses">
+                  <div class=" container-fluid">
+                  <div class="container bg-gray ">
+                    <div class="section-header">
+                        <h2> Our Courses</h2>
+                        <div class="orange-line m-auto"></div>
+                        <p> you can register this courses </p>
+                        
+                    </div>
+                      <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12  ">
+                          <div class="card">
+                            <img class="card-img-top img-fluid"  src="images.jpg" height="300px"  alt="">
+                            <div class="card-body">
+                              <h4 class="card-title">Mobile app</h4>
+                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 ">
+                          <div class="card">
+                            <img class="card-img-top img-fluid " src="image.jpg" height="300px" alt="">
+                            <div class="card-body">
+                              <h4 class="card-title">Web development</h4>
+                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 ">
+                          <div class="card">
+                
+                            <img class="card-img-top img-fluid" src="index.jpg" height="300px" alt="">
+                            <div class="card-body">
+                              <h4 class="card-title">web design</h4>
+                              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                            </div>
+                          </div>
+                        </div>
+                
+                      </div>
+                      <!-- /.row -->
+                
+                    </div>
+                  </div>  
+                    </div>
+                </section>
+                <br>
+              <section id="users">
+                  <div class=" container-fluid">
+                      <div class="container ">
+                       <div class="section-header">
+                         <h2>Students</h2>
+                         <div class="orange-line m-auto"></div>
+                         <p> here is All Students </p>
+                       </div>
+                       
+               
+                
+                <% if (messages.success) { %>
+                  <p style="color:green"><%- messages.success %></p>
+                <% } %>	
+                <div class="row">
+                    <div class="col">
+                      <div class="table-responsive ">
+                <table class="table table-striped table-bordered" id="mytable" name="mytable">
+                
+                  <tr style='text-align:left; background-color:#CCC'>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                  </tr>
+                  
+                  <!--
+                    Using FOREACH LOOP for the users array
+                    
+                    myArray.forEach(function(el, index) {
+                      // el - current element, i - index
+                    });
+                  -->
+                
+                  <% if (data1) { %>
+                  <% data1.forEach(function(user1){ %>
+                    <tr>
+                      <td><%= user1.name %></td>
+                      <td><%= user1.course %></td>
+                      <td><%= user1.email %></td>
+                      <td>
+                        <div style="float:left">
+                          <a href='/edit/<%= user1.id %>' class="btn btn-sm btn-success">Edit</a> &nbsp;							
+                          <form method="post" action="/<%= user1.id %>" style="float:right">
+                            <input type="submit" class="btn btn-sm btn-danger" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')" />
+                            <input type="hidden" name="_method" value="DELETE" />
+                          </form>
+                        </div>
+                      </td>
+                    </tr>
+                  <% }) %>
+                  <% } %>
+                
+                </table>
+              </div>
+            </div>
+            
+  
+      </div>
+      
+      </div>
+     </div>
+     </div>
+              </section>
+              <section id="team">
+    <div class=" container-fluid">
+      <div class="container">
+        <div class="section-header wow fadeInUp">
+          <h2>Developers</h2>
+          <div class="orange-line m-auto"></div>
+          <p>Here Is our Team</p>
+        </div>
+        
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 wow fadeInUp">
+            <div class="member">
+              <img src="imag.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Abdirahman mohamed hassan</h4>
+                  <span>Chief Executive Officer</span>
+                  <div class="social">
+                    <a href=""><i class="fa fa-twitter"></i></a>
+                    <a href=""><i class="fa fa-facebook"></i></a>
+                    <a href=""><i class="fa fa-google-plus"></i></a>
+                    <a href=""><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="member">
+              <img src="imag.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Ahmed-yasin mohamed abdi</h4>
+                  <span>Product Manager</span>
+                  <div class="social">
+                    <a href=""><i class="fa fa-twitter"></i></a>
+                    <a href=""><i class="fa fa-facebook"></i></a>
+                    <a href=""><i class="fa fa-google-plus"></i></a>
+                    <a href=""><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="member">
+              <img src="imag.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Khalid mohamed Abdilahi</h4>
+                  <span>CTO</span>
+                  <div class="social">
+                    <a href=""><i class="fa fa-twitter"></i></a>
+                    <a href=""><i class="fa fa-facebook"></i></a>
+                    <a href=""><i class="fa fa-google-plus"></i></a>
+                    <a href=""><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    </section><!-- #team -->
+
+              <SECTION id ="contact">
+                  <div class="container-fluid contact">
+                 
+                    <div class="container">
+                     <div class="section-header">
+                     <h3> Contact Us </h3>
+                 <div class="orange-line m-auto"></div>
+                 </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <p class="text-center contact-text" style="font-size: 28px;"><span class="text-light">If you have inqueries please email us at </span><span style="color: orangered">info@bigil.com</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+                       </SECTION>
+<!--
+including footer content which is common for all pages
+-->
+<%- include layouts/footer.ejs %>

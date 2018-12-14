@@ -1,0 +1,141 @@
+<!--
+including header content which is common for all pages
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title><%= title %></title>
+		
+		<link rel="stylesheet" type="text/css" href="/css/style.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+		
+	</head>
+	<body>
+
+
+
+
+		
+			<head>
+					<div class="container">
+						
+						
+						<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+			  
+			   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				 <span class="navbar-toggler-icon"></span>
+			   </button>
+			   <div class="collapse navbar-collapse" id="navbarNav">
+				 <ul class="navbar-nav ml-auto">
+				   <li class="nav-item active">
+					 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+				   </li>
+				   <li class="nav-item">
+					 <a class="nav-link" href="/#users"">Students</a>
+				   </li>
+				   <li class="nav-item">
+					 <a class="nav-link" href="/#registration">Registration</a>
+				   </li> 
+				   <li class="nav-item">
+					 <a class="nav-link" href="/#courses">Courses</a>
+				   </li>
+				   <li class="nav-item">
+						<a class="nav-link" href="/#team">Developers</a>
+				   </li>
+				   <li class="nav-item">
+					 <a class="nav-link" href="/#contact">Contact Us</a>
+				   </li>
+				  
+				 </ul>
+			   </div>
+			 </nav>
+					</div>
+				</head>
+		<br>
+		<br>
+		<br>
+<% if (messages.error) { %>
+	<p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+	<p style="color:green"><%- messages.success %></p>
+<% } %>
+
+<section id= "registration">
+		<div class="container-fluid">
+			 <div class="section-header">
+			   <h2>Rigisteration form</h2>
+			   <div class="orange-line m-auto"></div>
+			   
+			 </div>
+			 
+			 <div class="row">
+			 <div class="col-3 offset-1"> 
+					<div class="card">
+							<img class="card-img-top img-fluid"  src="/index1.jpg" height="300px"  alt="">
+							<div class="card-body">
+								<p> Update now up comming courses </p>
+							</div>
+						  </div>
+			 </div>
+			   <div class="col-7">
+				  <% if (messages.error) { %>
+					<p style="color:red"><%- messages.error %></p>
+				  <% } %>
+	  <form action="/edit/<%= id %>" method="post"  name="form1">
+
+		<div class="form-group">
+		 <input type="text" name="name" id="name" value="<%= name %>" class="form-control" placeholder="Full Name"/>
+			</div>
+	  
+			<div class="form-group">
+					<select name="course" value="<%= course %>" class="form-control " id ="select">
+					  <option value=" web design">
+						web design 
+					  </option>
+					  <option value="mobile app">
+						mobile app
+					  </option>
+					  <option value="CCNA">
+					  CCNA 
+					  </option>
+					  <option value="It Basic">
+						IT Basic
+					  </option>
+					  
+					</select>
+				  </div>
+	  
+		   <div class="form-group">
+			<input type="text" name="email" value="<%= email %>" class="form-control" placeholder="Email" />
+		   </div>
+		  
+
+		
+		  
+		   <div class="form-group">
+			<input type="submit" name="Submit" value="Update"  class="btn btn-lg btn-success"/>
+			<input type="hidden" name="_method" value="PUT" />
+		  </div>
+		
+	   
+		</div>
+		</div>
+
+	  
+		  
+	  </form>
+	</section>
+
+
+
+
+
+
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>
